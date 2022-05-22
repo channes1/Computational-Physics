@@ -19,8 +19,8 @@ while(1)
     x2=(sin(alpha)./alpha).^2;  % Diffraction term
     x=x1.*x2;                   % Combined effect
     plot(y,x,'b',y,x2,'--r');
-    title('Double slit diffraction  Mahesha MG 2012');
-    xlabel('Distance in m');
+    title('Double slit diffraction');
+    xlabel('Distance');
     ylabel('Intensity');
     hold all;
     ch= input('Press 1 to continue and 0 to exit: ');
