@@ -1,0 +1,58 @@
+# seed 
+S 0 
+# 
+# T_print       T_write 
+O 100          1000 
+# 
+# W             H 
+A 1024   1024 
+# 
+# random tiled 
+# type  dx      dy      l0              l_BN    N       M       p_C^l   p_C^s   A_C             p_BN^l  p_BN^s  A_BN 
+# 0             0.7     0.7     7.2552  1.018   4       4       0.2675  0.2475  -0.1    -0.4425 -0.3525 0.1 
+# 
+# bicrystalline 
+# type  dx              dy              l0              l_BN    x               p_C^l   p_C^s   A_C             theta_C p_BN^l  p_BN^s  A_BN    theta_BN 
+# 1             0.56936 0.39623 7.2552  1.018   0.25336 0.2675  0.2475  -0.1    0.0             -0.4425 -0.3525 0.1             0.0 
+# 
+# embedded crystallite 
+# type  dx      dy      l0      l_BN    fold    R       phi phases p_C_l p_C_s  A_C     theta_C u_C     v_C     p_BN_l  p_BN_s  A_BN    theta_BN    u_BN    v_BN 
+I 2     0.7     0.7     7.2552  1.018   1000    10.0    0.0     1  0.288974 0.213419 -0.1   0.0     0.0     0.0     -1.280985 -0.099644 0.1     0.0     0.0     0.0 
+# 
+# load from file 
+# type  filename                which 
+# 3             cbn_t:10000.dat 0 
+# 
+# A_C   A_BN 
+# N 0.1  0.1 
+# 
+#       initialize substrate 
+#       type: 0: single crystal, 1: loaded from file (pfc1 data file or similar (single-column format)) 
+#       fold: indicates rotational symmetry, 4- and 6-fold symmetric (rectangular and close-packed) supported 
+#       type    fold    dx      dy      l0      p               A               theta   u               v 
+sI      0       6       0.7 0.7 8.006    0.0             0.1             0.0             0.0             0.0 
+# 
+#       map substrate linearly between min and max 
+#       values given as an example are rubbish - subsequent shifting and scaling overrides this 
+#       min             max 
+sM      -7.5    113.9745 
+# 
+#       shift and scale substrate, p is new average and Arms new RMS amplitude 
+#       p               Arms 
+sS      0.0             1.0 
+# 
+#       substrate couplings alpha_C,S; alpha_B,S; alpha_N,S at the end 
+#       couplings < 0: monolayer atoms preferred on top of substrate atoms, > 0: between substrate atoms 
+M       -0.205888           1.0                     0.081045                   -0.059200                    1.0 
+        -0.145170            1.0                     -0.115324                   0.093904               1.0 
+        0.5                     0.02            0.3 
+        -0.248751           0.082400 
+        -0.12           0.0 
+        -0.248751           0.082400 
+        -0.12           0.0 
+        1.018 
+        0.2                     0.2 
+        0.02            0.02            0.02 
+# 
+# T                     dx      dy      dt      T_optimize 
+R 10000        0.7     0.7     0.5     100 
